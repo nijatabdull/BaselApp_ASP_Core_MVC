@@ -1,0 +1,42 @@
+﻿@model BaselFinalProjectApp.Areas.Admin.Models.ViewModel.CategoryData
+
+<section class="p-3">
+    <form asp-action="Edit" asp-controller="Category" method="post" style="width:50%; margin:0px auto;">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="form-group">
+            <input asp-for="CategoryModel.Id" value="@Model.CategoryLanguages.Where(x=>x.LanguageId==1).Select(x=>x.CategoryId).SingleOrDefault()" type="hidden" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="CategoryModel.EngName"></label>
+            <input asp-for="CategoryModel.EngName" value="@Model.CategoryLanguages.Where(x=>x.LanguageId==1).Select(x=>x.Name).SingleOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="CategoryModel.EngName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CategoryModel.AzName"></label>
+            <input asp-for="CategoryModel.AzName" value="@Model.CategoryLanguages.Where(x=>x.LanguageId==2).Select(x=>x.Name).SingleOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="CategoryModel.AzName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CategoryModel.RuName"></label>
+            <input asp-for="CategoryModel.RuName" value="@Model.CategoryLanguages.Where(x=>x.LanguageId==3).Select(x=>x.Name).SingleOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="CategoryModel.RuName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CategoryModel.Action"></label>
+            <input asp-for="CategoryModel.Action" value="@Model.CategoryLanguages.Where(x=>x.LanguageId==1).Select(x=>x.Category).Select(x=>x.Action).FirstOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="CategoryModel.Action" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CategoryModel.Controller"></label>
+            <input asp-for="CategoryModel.Controller" type="text" value="@Model.CategoryLanguages.Where(x=>x.LanguageId==1).Select(x=>x.Category).Select(x=>x.Controller).FirstOrDefault()" class="form-control">
+            <span asp-validation-for="CategoryModel.Controller" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn w-100 btn-dark">Update</button>
+        <a asp-controller="Category" asp-action="Index" class="text-success w-100 btn btn-dark mt-2 mb-3">Back List</a>
+    </form>
+</section>
+
+
+
+
+

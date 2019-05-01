@@ -1,0 +1,23 @@
+﻿@using BaselFinalProjectApp.Models.MainModel
+@model ColorLanguage
+
+<table class="table table-dark">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">ColorCode</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.Color.ColorCode</td>
+        </tr>
+    </tbody>
+</table>
+<form asp-controller="Color" asp-action="Delete" method="post">
+    <input type="hidden" value="@Model.Color.Id" />
+    <button type="submit" class="btn w-50 btn-dark ml-5 mb-3">Delete</button>
+</form>
+<a asp-controller="Color" asp-action="Index" class="text-success w-50 btn btn-dark ml-5 mb-3">Back List</a>
+

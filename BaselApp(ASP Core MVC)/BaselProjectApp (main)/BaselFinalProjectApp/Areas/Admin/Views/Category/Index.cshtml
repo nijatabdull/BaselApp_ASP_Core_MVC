@@ -1,0 +1,35 @@
+﻿@model List<BaselFinalProjectApp.Models.MainModel.CategoryLanguage>
+@using BaselFinalProjectApp.Models.MainModel
+
+
+<section class="mb-4">
+    <div class="p-3 bg-secondary text-white" style="font-size:1.5rem; text-align:center;">Product</div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Action</th>
+                <th scope="col">Controller</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (CategoryLanguage item in Model)
+            {
+            <tr>
+                <th>@item.Name</th>
+                <td>@item.Category.Action</td>
+                <td>@item.Category.Controller</td>
+                <td>
+                    <a asp-action="Edit" asp-controller="Category" asp-route-id="@item.Category.Id">Edit</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-controller="Category" asp-route-id="@item.Category.Id">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-action="Create" asp-controller="Category" class="btn btn-secondary btn-lg btn-block">Create</a>
+</section>

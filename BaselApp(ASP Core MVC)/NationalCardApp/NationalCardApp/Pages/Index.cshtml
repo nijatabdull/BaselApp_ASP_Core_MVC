@@ -1,0 +1,108 @@
+﻿@page
+@model NationalCardApp.Pages.IndexModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/cardValidation.css" />
+    <link rel="stylesheet" href="~/css/mediaQuery.css">
+</head>
+<body>
+    <!-- Cart Add Information Section Start -->
+    <section id="cartValidationInfo">
+        <h1 style="text-align:center">
+            CARD INFORMATION
+        </h1>
+        <p>
+            <a href="">
+                <i class="fas fa-home"></i>Home
+            </a>
+            <span>
+                /Index
+            </span>
+        </p>
+    </section>
+    <!-- Cart Add  Information Section Start -->
+    <partial name="_CookieConsentPartial" />
+    <!-- Cart Login Section Start -->
+    <section id="cardValidation">
+        <header>
+            <p>User:</p>
+            <span>
+                @if (Model.UserName != null)
+                {
+                    @Model.UserName<span>&nbsp;</span>@Model.UserLastName<span>&nbsp;£</span>@Model.UserTotalPrice;
+                }
+            </span>
+        </header>
+        <main>
+            <form method="post">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <label asp-for="CardViewModel.CardNumber">CARD NUMBER</label>
+                    <input pattern="[0-9]" asp-for="CardViewModel.CardNumber" type="number" class="form-control" placeholder="0000 0000 0000 0000">
+                    <span class="text-danger" asp-validation-for="CardViewModel.CardNumber"></span>
+                </div>
+                <div class="form-row mt-4">
+                    <div class="form-group col-md-6">
+                        <label asp-for="CardViewModel.ValidTHRU">VALID THRU</label>
+                        <input asp-for="CardViewModel.ValidTHRU" type="text" class="form-control" id="validThru" placeholder="00/00">
+                        <span class="text-danger" asp-validation-for="CardViewModel.ValidTHRU"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="CardViewModel.CVV">CVV</label>
+                        <input pattern="[0-9]" asp-for="CardViewModel.CVV" type="number" class="form-control" id="Cvv" placeholder="123">
+                        <span class="text-danger" asp-validation-for="CardViewModel.CVV"></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success mt-3">PAY</button>
+            </form>
+        </main>
+    </section>
+    <!-- Cart Login  Section Start -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+
+    <script type="text/javascript">
+        // When ready.
+        $(function () {
+
+            $("#validThru").on("keyup", function (event) {
+                // When user select text in the document, also abort.
+                var selection = window.getSelection().toString();
+                if (selection !== '') {
+                    return;
+                }
+
+                var $this = $(this);
+                var input = $this.val();
+                input = input.replace(/[\W\s\._\-]+/g, '');
+
+                var split = 4;
+                var chunk = [];
+                var info;
+
+                for (var i = 0, len = input.length; i < len; i += split) {
+                    split = (i >= 0 && i <= 5) ? 2 : 4;
+                    chunk.push(input.substr(i, split));
+                }
+
+                if (input.length < 4) {
+                    $this.val(function () {
+                        return chunk.join("/").toUpperCase();
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

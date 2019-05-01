@@ -1,0 +1,25 @@
+﻿@using BaselFinalProjectApp.Models.MainModel
+@model CategoryLanguage
+
+<table class="table table-dark">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+            <th scope="col">Controller</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.Category.Action</td>
+            <td>@Model.Category.Controller</td>
+        </tr>
+    </tbody>
+</table>
+<form asp-controller="Category" asp-action="Delete" method="post">
+    <input type="hidden" value="@Model.Category.Id" />
+    <button type="submit" class="btn w-50 btn-dark ml-5 mb-3">Delete</button>
+</form>
+<a asp-controller="Category" asp-action="Index" class="text-success w-50 btn btn-dark ml-5 mb-3">Back List</a>
+

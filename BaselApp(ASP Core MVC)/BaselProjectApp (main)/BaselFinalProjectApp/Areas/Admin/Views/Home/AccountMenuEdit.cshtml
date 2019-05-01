@@ -1,0 +1,42 @@
+﻿@model BaselFinalProjectApp.Areas.Admin.Models.ViewModel.MenuData
+@using BaselFinalProjectApp.Models.PageModel.AccountPageModel
+
+@{
+    List<AccountMenuLanguage> subMenuLanguages = (List<AccountMenuLanguage>)Model.Object;
+
+}
+
+<section class="p-3">
+    <form asp-action="AccountMenuEdit" asp-controller="Home" method="post" style="width:50%; margin:0px auto;">
+        <div asp-validation-summary="ModelOnly"></div>
+        <input type="hidden" asp-for="MenuModel.Id" value="@subMenuLanguages.Select(z=>z.AccountMenu.Id).FirstOrDefault()" />
+        <div class="form-group">
+            <label asp-for="MenuModel.EngName"></label>
+            <input value="@subMenuLanguages.Where(x => x.LanguageId == 1).Select(x => x.Name).SingleOrDefault()" asp-for="MenuModel.EngName" type="text" class="form-control">
+            <span asp-validation-for="MenuModel.EngName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="MenuModel.AzName"></label>
+            <input value="@subMenuLanguages.Where(x=>x.LanguageId==2).Select(x=>x.Name).SingleOrDefault()" asp-for="MenuModel.AzName" type="text" class="form-control">
+            <span asp-validation-for="MenuModel.AzName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="MenuModel.RuName"></label>
+            <input value="@subMenuLanguages.Where(x=>x.LanguageId==3).Select(x=>x.Name).SingleOrDefault()" asp-for="MenuModel.RuName" type="text" class="form-control">
+            <span asp-validation-for="MenuModel.RuName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="MenuModel.Controller"></label>
+            <input value="@subMenuLanguages.Select(z=>z.AccountMenu.Controller).FirstOrDefault()" asp-for="MenuModel.Controller" type="text" class="form-control">
+            <span asp-validation-for="MenuModel.Controller" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="MenuModel.Action"></label>
+            <input value="@subMenuLanguages.Select(z=>z.AccountMenu.Action).FirstOrDefault()" asp-for="MenuModel.Action" type="text" class="form-control">
+            <span asp-validation-for="MenuModel.Action" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn w-100 btn-dark">Update</button>
+        <a asp-controller="Home" asp-action="Menu" class="text-success w-100 btn btn-dark mt-2 mb-3">Back List</a>
+    </form>
+</section>
+

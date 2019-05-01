@@ -1,0 +1,17 @@
+﻿@using BaselFinalProjectApp.Models.PageModel.HomePageModel
+@model List<MenuLanguage>
+
+@foreach (MenuLanguage item in Model)
+{
+    <tr>
+        <th>@item.Name</th>
+        <td>@item.Menu.Controller</td>
+        <td>@item.Menu.Action</td>
+        <td>
+            <a asp-action="MenuEdit" asp-controller="Home" asp-route-id="@item.Menu.Id">Edit</a>
+        </td>
+        <td>
+            <a asp-action="MenuDelete" asp-controller="Home" asp-route-id="@item.Menu.Id">Delete</a>
+        </td>
+    </tr>
+}

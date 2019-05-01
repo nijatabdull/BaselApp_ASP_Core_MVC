@@ -1,0 +1,63 @@
+﻿@model List<BaselFinalProjectApp.Models.MainModel.ProductLanguage>
+    @using BaselFinalProjectApp.Models.MainModel
+
+<section class="mb-4">
+    <div class="p-3 bg-secondary text-white" style="font-size:1.5rem; text-align:center;">Product</div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Detail</th>
+                <th scope="col">About</th>
+                <th scope="col">Benefit</th>
+                <th scope="col">Price</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Category</th>
+                <th scope="col">Colors</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ProductLanguage item in Model)
+            {
+                <tr>
+                    <th>@item.Name</th>
+                    <td>@item.Detail</td>
+                    <td>@item.About</td>
+                    <td>@item.Benefit</td>
+                    <td>@item.Product.Price</td>
+                    <td>@item.Product.Stock</td>
+                    <td>@item.Product.Category.CategoryLanguages.Select(x => x.Name).SingleOrDefault()</td>
+                    <td>
+                        @if (item.Product.ProductColors!=null)
+                        {
+                            @foreach (ColorLanguage color in @item.Product.ProductColors.Select(x => x.Color).SelectMany(z => z.ColorLanguages).ToList())
+                            {
+                                <span style="color:@color.Name">@color.Name </span>
+                            }
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Measure" asp-controller="Product" asp-route-id="@item.Product.Id">Measure</a>
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-controller="Product" asp-route-id="@item.Product.Id">Edit</a>
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-controller="Product" asp-route-id="@item.Product.Id">Delete</a>
+                    </td>
+                    <td>
+                        <img width="100" src="~/lib/image/@item.Product.Images.Select(x=>x.FileName).FirstOrDefault()" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <form asp-action="Delete" asp-controller="Product" method="post">
+        <button type="submit" class="btn btn-block btn-dark mb-2 p-2" asp-route-id="@Model.Select(x=>x.ProductId).FirstOrDefault()">Delete</button>
+    </form>
+    <a asp-action="Index" asp-controller="Product" class="btn btn-secondary btn-lg btn-block">Back</a>
+</section>

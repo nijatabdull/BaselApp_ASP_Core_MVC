@@ -1,0 +1,88 @@
+﻿@model BaselFinalProjectApp.Areas.Admin.Models.ViewModel.SlideModelEdit
+@using BaselFinalProjectApp.Models.PageModel.AccountPageModel
+@using BaselFinalProjectApp.Areas.Admin.Models.ViewModel
+
+
+<section class="p-3">
+    <form asp-action="Edit" asp-controller="Slide" method="post" enctype="multipart/form-data" style="width:50%; margin:0px auto;">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="form-group">
+            <input asp-for="Id" type="hidden" value="@Model.Id" class="form-control">
+            <span asp-validation-for="Id" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="EngHeader"></label>
+            <input asp-for="EngHeader" type="text" value="@Model.EngHeader" class="form-control">
+            <span asp-validation-for="EngHeader" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AzHeader"></label>
+            <input asp-for="AzHeader" type="text" value="@Model.AzHeader" class="form-control">
+            <span asp-validation-for="AzHeader" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="RuHeader"></label>
+            <input asp-for="RuHeader" value="@Model.RuHeader" type="text" class="form-control">
+            <span asp-validation-for="RuHeader" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="EngTitle"></label>
+            <input asp-for="EngTitle" type="text" value="@Model.EngTitle" class="form-control">
+            <span asp-validation-for="EngTitle" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AzTitle"></label>
+            <input asp-for="AzTitle" type="text" value="@Model.AzTitle" class="form-control">
+            <span asp-validation-for="AzTitle" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="RuTitle"></label>
+            <input asp-for="RuTitle" type="text" value="@Model.RuTitle" class="form-control">
+            <span asp-validation-for="RuTitle" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="EngDescription"></label>
+            <input asp-for="EngDescription" type="text" value="@Model.EngDescription" class="form-control">
+            <span asp-validation-for="EngDescription" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AzDescription"></label>
+            <input asp-for="AzDescription" type="text" value="@Model.AzDescription" class="form-control">
+            <span asp-validation-for="AzDescription" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="RuDescription"></label>
+            <input asp-for="RuDescription" value="@Model.RuDescription" type="text" class="form-control">
+            <span asp-validation-for="RuDescription" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="EngFooter"></label>
+            <input asp-for="EngFooter" type="text" class="form-control">
+            <span asp-validation-for="EngFooter" value="@Model.EngFooter" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AzFooter"></label>
+            <input asp-for="AzFooter" value="@Model.AzFooter" type="text" class="form-control">
+            <span asp-validation-for="AzFooter" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="RuFooter"></label>
+            <input asp-for="RuFooter" value="@Model.RuFooter" type="text" class="form-control">
+            <span asp-validation-for="RuFooter" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Image"></label>
+            <input asp-for="Image" accept="image/*" type="file" class="form-control form-control-line">
+            <span asp-validation-for="Image" class="text-danger"></span>
+        </div>
+        <div>
+            <img src="~/lib/image/@Model.OldImage" width="100"/>
+        </div>
+        <div class="form-group">
+            <input asp-for="OldImage" type="hidden" value="@Model.OldImage" class="form-control">
+            <span asp-validation-for="OldImage" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn w-100 btn-dark">Update</button>
+        <a asp-controller="Slide" asp-action="Index" class="text-success w-100 btn btn-dark mt-2 mb-3">Back List</a>
+    </form>
+</section>

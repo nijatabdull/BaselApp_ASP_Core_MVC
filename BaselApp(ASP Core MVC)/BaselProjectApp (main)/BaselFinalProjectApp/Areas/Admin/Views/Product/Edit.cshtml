@@ -1,0 +1,168 @@
+﻿@model BaselFinalProjectApp.Areas.Admin.Models.ViewModel.ProductEditData
+@using BaselFinalProjectApp.Areas.Admin.Models.ViewModel
+@using BaselFinalProjectApp.Models.MainModel
+
+<section class="p-3">
+    <form asp-action="Edit" asp-controller="Product" method="post" enctype="multipart/form-data" style="width:50%; margin:0px auto;">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="form-group">
+            <input asp-for="ProductModelEdit.Id" value="@Model.ProductLanguages.Where(z=>z.LanguageId==1).Select(x=>x.ProductId).FirstOrDefault()" type="hidden" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.EngName"></label>
+            <input asp-for="ProductModelEdit.EngName" value="@Model.ProductLanguages.Where(z=>z.LanguageId==1).Select(x=>x.Name).FirstOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="ProductModelEdit.EngName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.AzName"></label>
+            <input asp-for="ProductModelEdit.AzName" value="@Model.ProductLanguages.Where(z=>z.LanguageId==2).Select(x=>x.Name).FirstOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="ProductModelEdit.AzName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.RuName"></label>
+            <input asp-for="ProductModelEdit.RuName" value="@Model.ProductLanguages.Where(z=>z.LanguageId==3).Select(x=>x.Name).FirstOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="ProductModelEdit.RuName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.EngDetail"></label>
+            <input asp-for="ProductModelEdit.EngDetail" type="text" value="@Model.ProductLanguages.Where(z=>z.LanguageId==1).Select(x=>x.Detail).FirstOrDefault()" class="form-control">
+            <span asp-validation-for="ProductModelEdit.EngDetail" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.AzDetail"></label>
+            <input asp-for="ProductModelEdit.AzDetail" type="text" value="@Model.ProductLanguages.Where(z=>z.LanguageId==2).Select(x=>x.Detail).FirstOrDefault()" class="form-control">
+            <span asp-validation-for="ProductModelEdit.AzDetail" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.RuDetail"></label>
+            <input asp-for="ProductModelEdit.RuDetail" type="text" value="@Model.ProductLanguages.Where(z=>z.LanguageId==3).Select(x=>x.Detail).FirstOrDefault()" class="form-control">
+            <span asp-validation-for="ProductModelEdit.RuDetail" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.EngAbout"></label>
+            <input asp-for="ProductModelEdit.EngAbout" type="text" value="@Model.ProductLanguages.Where(z=>z.LanguageId==1).Select(x=>x.About).FirstOrDefault()" class="form-control">
+            <span asp-validation-for="ProductModelEdit.EngAbout" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.AzAbout"></label>
+            <input asp-for="ProductModelEdit.AzAbout" type="text" value="@Model.ProductLanguages.Where(z=>z.LanguageId==2).Select(x=>x.About).FirstOrDefault()" class="form-control">
+            <span asp-validation-for="ProductModelEdit.AzAbout" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.RuAbout"></label>
+            <input asp-for="ProductModelEdit.RuAbout" type="text" value="@Model.ProductLanguages.Where(z=>z.LanguageId==3).Select(x=>x.About).FirstOrDefault()" class="form-control">
+            <span asp-validation-for="ProductModelEdit.RuAbout" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.EngBenefit"></label>
+            <input asp-for="ProductModelEdit.EngBenefit" type="text" value="@Model.ProductLanguages.Where(z=>z.LanguageId==1).Select(x=>x.Benefit).FirstOrDefault()" class="form-control">
+            <span asp-validation-for="ProductModelEdit.EngBenefit" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.AzBenefit"></label>
+            <input asp-for="ProductModelEdit.AzBenefit" value="@Model.ProductLanguages.Where(z=>z.LanguageId==2).Select(x=>x.Benefit).FirstOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="ProductModelEdit.AzBenefit" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.RuBenefit"></label>
+            <input asp-for="ProductModelEdit.RuBenefit" type="text" value="@Model.ProductLanguages.Where(z=>z.LanguageId==3).Select(x=>x.Benefit).FirstOrDefault()" class="form-control">
+            <span asp-validation-for="ProductModelEdit.RuBenefit" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            @{
+                int price = (int)@Model.ProductLanguages.Select(x => x.Product).Select(x => x.Price).FirstOrDefault();
+            }
+            <label asp-for="ProductModelEdit.Price"></label>
+            <input asp-for="ProductModelEdit.Price" type="text" min="0" value="@price" class="form-control">
+            <span asp-validation-for="ProductModelEdit.Price" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.Stock"></label>
+            <input asp-for="ProductModelEdit.Stock" type="text" value="@Model.ProductLanguages.Select(x=>x.Product).Select(x=>x.Stock).FirstOrDefault()" class="form-control">
+            <span asp-validation-for="ProductModelEdit.Stock" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.Size"></label>
+            <input asp-for="ProductModelEdit.Size" value="@Model.ProductLanguages.Select(x => x.Product).SelectMany(x => x.Measures).Select(x=>x.Size).FirstOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="ProductModelEdit.Size" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.SKU"></label>
+            <input asp-for="ProductModelEdit.SKU" value="@Model.ProductLanguages.Select(x => x.Product).SelectMany(x => x.Measures).Select(x=>x.SKU).FirstOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="ProductModelEdit.SKU" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.Chest"></label>
+            <input asp-for="ProductModelEdit.Chest" value="@Model.ProductLanguages.Select(x => x.Product).SelectMany(x => x.Measures).Select(x=>x.Chest).FirstOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="ProductModelEdit.Chest" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.Waist"></label>
+            <input asp-for="ProductModelEdit.Waist" type="text" value="@Model.ProductLanguages.Select(x => x.Product).SelectMany(x => x.Measures).Select(x=>x.Waist).FirstOrDefault()" class="form-control">
+            <span asp-validation-for="ProductModelEdit.Waist" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.Hip"></label>
+            <input asp-for="ProductModelEdit.Hip" type="text" value="@Model.ProductLanguages.Select(x => x.Product).SelectMany(x => x.Measures).Select(x=>x.Hip).FirstOrDefault()" class="form-control">
+            <span asp-validation-for="ProductModelEdit.Hip" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.Height"></label>
+            <input asp-for="ProductModelEdit.Height" type="text" value="@Model.ProductLanguages.Select(x => x.Product).SelectMany(x => x.Measures).Select(x=>x.Height).FirstOrDefault()" class="form-control">
+            <span asp-validation-for="ProductModelEdit.Height" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.Age"></label>
+            <input asp-for="ProductModelEdit.Age" value="@Model.ProductLanguages.Select(x => x.Product).SelectMany(x => x.Measures).Select(x=>x.Age).FirstOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="ProductModelEdit.Age" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            @if (@Model.ColorModels != null && @Model.ColorModels.Count() > 0)
+            {
+                for (int i = 0; i < @Model.ColorModels.Count(); i++)
+                {
+                    <span class="p-1">
+                        <input asp-for="@Model.ColorModels[i].IsOptionSelected" type="checkbox" />
+                        <label asp-for="@Model.ColorModels[i].IsOptionSelected">@Model.ColorModels[i].OptionName</label>
+
+                        @Html.HiddenFor(x => @Model.ColorModels[i].OptionId)
+                        @Html.HiddenFor(y => @Model.ColorModels[i].OptionName)
+                    </span>
+                }
+            }
+        </div>
+        <div class="form-group">
+            <select class="form-control form-control" asp-for="ProductModelEdit.CategoryId">
+                @foreach (CategoryLanguage item in Model.CategoryLanguages.ToList())
+                {
+                    if (Model.ProductLanguages.Select(x => x.Product).Select(x => x.CategoryId).FirstOrDefault() == item.CategoryId)
+                    {
+                        <option selected value="@item.Category.Id">@item.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@item.Category.Id">@item.Name</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelEdit.Image"></label>
+            <input asp-for="ProductModelEdit.Image" accept="image/*" multiple type="file" class="form-control form-control-line">
+            <span asp-validation-for="ProductModelEdit.Image" class="text-danger"></span>
+        </div>
+        <div>
+            @foreach (Image item in Model.ProductLanguages.Where(x => x.LanguageId == 1).Select(x => x.Product).SelectMany(x => x.Images).ToList())
+            {
+                <img src="~/lib/image/@item.FileName" width="100" class="mr-2" />
+            }
+        </div>
+        <button type="submit" class="mt-5 btn w-100 btn-dark">Update</button>
+        <a asp-controller="Product" asp-action="Index" class="text-success w-100 btn btn-dark mt-2 mb-3">Back List</a>
+    </form>
+</section>
+
+
+
+
+

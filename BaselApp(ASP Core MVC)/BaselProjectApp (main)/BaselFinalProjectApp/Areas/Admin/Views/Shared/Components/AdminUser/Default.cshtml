@@ -1,0 +1,27 @@
+﻿@using BaselFinalProjectApp.Areas.Admin.Models.ViewModel
+@model AdminData
+
+<form asp-action="Update" asp-controller="Account" asp-area="Admin" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="RegisterModel.Username"></label>
+        <input asp-for="RegisterModel.Username" value="@Model.AppUser.UserName" type="text" class="form-control">
+        <span class="text-danger" asp-validation-for="RegisterModel.Username"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RegisterModel.Email"></label>
+        <input asp-for="RegisterModel.Email" value="@Model.AppUser.Email" type="email" class="form-control">
+        <span class="text-danger" asp-validation-for="RegisterModel.Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RegisterModel.Password"></label>
+        <input asp-for="RegisterModel.Password"  type="password" class="form-control">
+        <span class="text-danger" asp-validation-for="RegisterModel.Password"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RegisterModel.ConfrimPassword"></label>
+        <input asp-for="RegisterModel.ConfrimPassword" type="password" class="form-control">
+        <span class="text-danger" asp-validation-for="RegisterModel.ConfrimPassword"></span>
+    </div>
+    <button type="submit" class="btn btn-dark">Submit</button>
+</form>

@@ -1,0 +1,42 @@
+@media only screen and (max-width:992px){
+    
+    /* Card Validation Page Start */
+    #cardValidation header {
+        width: 60%;
+        margin: 20px auto;
+    }
+    #cardValidation main {
+        width: 60%;
+        margin: auto;
+    }
+    /* Card Validation Page End */
+}
+@media only screen and (max-width:768px){
+    /* Card Validation Page Start */
+    #cardValidation header {
+        width: 80%;
+        margin: 20px auto;
+    }
+    #cardValidation main {
+        width: 80%;
+        margin: auto;
+    }
+    /* Card Validation Page End */
+}
+@media only screen and (max-width:576px){
+    #cardValidation header {
+        width: 98%;
+        margin: 20px auto;
+    }
+    #cardValidation main {
+        width: 98%;
+        margin: auto;
+    }
+    #cardValidation {
+        width: 100%;
+        padding: 20px 10px;
+    }
+    #cardValidation main button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,38 @@
+﻿@model BaselFinalProjectApp.Areas.Admin.Models.ViewModel.ColorData
+
+
+<section class="p-3">
+    <form asp-action="Edit" asp-controller="Color" method="post" style="width:50%; margin:0px auto;">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="form-group">
+            <input asp-for="ColorsModel.Id" value="@Model.ColorLanguages.Where(x=>x.LanguageId==1).Select(x=>x.ColorId).SingleOrDefault()" type="hidden" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="ColorsModel.EngName"></label>
+            <input asp-for="ColorsModel.EngName" value="@Model.ColorLanguages.Where(x=>x.LanguageId==1).Select(x=>x.Name).SingleOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="ColorsModel.EngName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ColorsModel.AzName"></label>
+            <input asp-for="ColorsModel.AzName" value="@Model.ColorLanguages.Where(x=>x.LanguageId==2).Select(x=>x.Name).SingleOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="ColorsModel.AzName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ColorsModel.RuName"></label>
+            <input asp-for="ColorsModel.RuName" value="@Model.ColorLanguages.Where(x=>x.LanguageId==3).Select(x=>x.Name).SingleOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="ColorsModel.RuName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ColorsModel.ColorCode"></label>
+            <input asp-for="ColorsModel.ColorCode" value="@Model.ColorLanguages.Where(x=>x.LanguageId==1).Select(x=>x.Color).Select(x=>x.ColorCode).FirstOrDefault()" type="text" class="form-control">
+            <span asp-validation-for="ColorsModel.ColorCode" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn w-100 btn-dark">Update</button>
+        <a asp-controller="Color" asp-action="Index" class="text-success w-100 btn btn-dark mt-2 mb-3">Back List</a>
+    </form>
+</section>
+
+
+
+
+

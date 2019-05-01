@@ -1,0 +1,17 @@
+﻿@using BaselFinalProjectApp.Models.PageModel.AccountPageModel
+@model List<AccountMenuLanguage>
+
+@foreach (AccountMenuLanguage item in Model)
+{
+    <tr>
+        <th>@item.Name</th>
+        <td>@item.AccountMenu.Controller</td>
+        <td>@item.AccountMenu.Action</td>
+        <td>
+            <a asp-action="AccountMenuEdit" asp-controller="Home" asp-route-id="@item.AccountMenu.Id">Edit</a>
+        </td>
+        <td>
+            <a asp-action="AccountMenuDelete" asp-controller="Home" asp-route-id="@item.AccountMenu.Id">Delete</a>
+        </td>
+    </tr>
+}

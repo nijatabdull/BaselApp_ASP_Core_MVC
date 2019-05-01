@@ -1,0 +1,36 @@
+﻿@model BaselFinalProjectApp.Areas.Admin.Models.ViewModel.ColorsModel
+@using BaselFinalProjectApp.Areas.Admin.Models.ViewModel
+
+
+<section class="p-3">
+    <form asp-action="Create" asp-controller="Color" method="post" style="width:50%; margin:0px auto;">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="form-group">
+            <label asp-for="EngName"></label>
+            <input asp-for="EngName" type="text" class="form-control">
+            <span asp-validation-for="EngName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AzName"></label>
+            <input asp-for="AzName" type="text" class="form-control">
+            <span asp-validation-for="AzName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="RuName"></label>
+            <input asp-for="RuName" type="text" class="form-control">
+            <span asp-validation-for="RuName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ColorCode"></label>
+            <input asp-for="ColorCode" type="text" class="form-control">
+            <span asp-validation-for="ColorCode" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn w-100 btn-dark">Create</button>
+        <a asp-controller="Color" asp-action="Index" class="text-success w-100 btn btn-dark mt-2 mb-3">Back List</a>
+    </form>
+</section>
+
+
+
+
+

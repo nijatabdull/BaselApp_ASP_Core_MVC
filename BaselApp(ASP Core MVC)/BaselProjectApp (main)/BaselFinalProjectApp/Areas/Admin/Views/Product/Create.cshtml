@@ -1,0 +1,149 @@
+﻿@model BaselFinalProjectApp.Areas.Admin.Models.ViewModel.ProductCreateData
+@using BaselFinalProjectApp.Areas.Admin.Models.ViewModel
+@using BaselFinalProjectApp.Models.MainModel
+
+<section class="p-3">
+    <form asp-action="Create" asp-controller="Product" method="post" enctype="multipart/form-data" style="width:50%; margin:0px auto;">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.EngName"></label>
+            <input asp-for="ProductModelCreate.EngName" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.EngName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.AzName"></label>
+            <input asp-for="ProductModelCreate.AzName" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.AzName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.RuName"></label>
+            <input asp-for="ProductModelCreate.RuName" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.RuName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.EngDetail"></label>
+            <input asp-for="ProductModelCreate.EngDetail" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.EngDetail" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.AzDetail"></label>
+            <input asp-for="ProductModelCreate.AzDetail" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.AzDetail" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.RuDetail"></label>
+            <input asp-for="ProductModelCreate.RuDetail" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.RuDetail" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.EngAbout"></label>
+            <input asp-for="ProductModelCreate.EngAbout" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.EngAbout" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.AzAbout"></label>
+            <input asp-for="ProductModelCreate.AzAbout" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.AzAbout" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.RuAbout"></label>
+            <input asp-for="ProductModelCreate.RuAbout" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.RuAbout" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.EngBenefit"></label>
+            <input asp-for="ProductModelCreate.EngBenefit" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.EngBenefit" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.AzBenefit"></label>
+            <input asp-for="ProductModelCreate.AzBenefit" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.AzBenefit" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.RuBenefit"></label>
+            <input asp-for="ProductModelCreate.RuBenefit" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.RuBenefit" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.Price"></label>
+            <input asp-for="ProductModelCreate.Price" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.Price" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.Stock"></label>
+            <input asp-for="ProductModelCreate.Stock" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.Stock" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.Size"></label>
+            <input asp-for="ProductModelCreate.Size" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.Size" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.SKU"></label>
+            <input asp-for="ProductModelCreate.SKU" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.SKU" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.Chest"></label>
+            <input asp-for="ProductModelCreate.Chest" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.Chest" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.Waist"></label>
+            <input asp-for="ProductModelCreate.Waist" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.Waist" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.Hip"></label>
+            <input asp-for="ProductModelCreate.Hip" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.Hip" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.Height"></label>
+            <input asp-for="ProductModelCreate.Height" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.Height" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.Age"></label>
+            <input asp-for="ProductModelCreate.Age" type="text" class="form-control">
+            <span asp-validation-for="ProductModelCreate.Age" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            @if (@Model.ColorModels != null && @Model.ColorModels.Count() > 0)
+            {
+                for (int i = 0; i < @Model.ColorModels.Count(); i++)
+                {
+                    <span class="p-1">
+                        <input asp-for="@Model.ColorModels[i].IsOptionSelected" type="checkbox" />
+                        <label asp-for="@Model.ColorModels[i].IsOptionSelected">@Model.ColorModels[i].OptionName</label>
+
+                        @Html.HiddenFor(x => @Model.ColorModels[i].OptionId)
+                        @Html.HiddenFor(y => @Model.ColorModels[i].OptionName)
+                    </span>
+                }
+            }
+        </div>
+        <div class="form-group">
+            <select class="form-control form-control" asp-for="ProductModelCreate.CategoryId">
+                @foreach (CategoryLanguage item in Model.CategoryLanguages.ToList())
+                {
+                    <option value="@item.Category.Id">@item.Name</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductModelCreate.Image"></label>
+            <input asp-for="ProductModelCreate.Image" multiple accept="image/*" id="imageFile" type="file" class="form-control form-control-line">
+            <span asp-validation-for="ProductModelCreate.Image" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn w-100 btn-dark">Create</button>
+        <a asp-controller="Product" asp-action="Index" class="text-success w-100 btn btn-dark mt-2 mb-3">Back List</a>
+    </form>
+</section>
+
+
+
+
+

@@ -1,0 +1,14 @@
+C:\Users\Nicat\Desktop\Basel-Final Project\Backand\CardAPI\CardAPI\obj\Debug\netcoreapp2.1\CardAPI.csproj.CoreCompileInputs.cache
+C:\Users\Nicat\Desktop\Basel-Final Project\Backand\CardAPI\CardAPI\obj\Debug\netcoreapp2.1\CardAPI.RazorAssemblyInfo.cache
+C:\Users\Nicat\Desktop\Basel-Final Project\Backand\CardAPI\CardAPI\obj\Debug\netcoreapp2.1\CardAPI.RazorAssemblyInfo.cs
+C:\Users\Nicat\Desktop\Basel-Final Project\Backand\CardAPI\CardAPI\obj\Debug\netcoreapp2.1\CardAPI.AssemblyInfoInputs.cache
+C:\Users\Nicat\Desktop\Basel-Final Project\Backand\CardAPI\CardAPI\obj\Debug\netcoreapp2.1\CardAPI.AssemblyInfo.cs
+C:\Users\Nicat\Desktop\Basel-Final Project\Backand\CardAPI\CardAPI\bin\Debug\netcoreapp2.1\CardAPI.deps.json
+C:\Users\Nicat\Desktop\Basel-Final Project\Backand\CardAPI\CardAPI\bin\Debug\netcoreapp2.1\CardAPI.runtimeconfig.json
+C:\Users\Nicat\Desktop\Basel-Final Project\Backand\CardAPI\CardAPI\bin\Debug\netcoreapp2.1\CardAPI.runtimeconfig.dev.json
+C:\Users\Nicat\Desktop\Basel-Final Project\Backand\CardAPI\CardAPI\bin\Debug\netcoreapp2.1\CardAPI.dll
+C:\Users\Nicat\Desktop\Basel-Final Project\Backand\CardAPI\CardAPI\bin\Debug\netcoreapp2.1\CardAPI.pdb
+C:\Users\Nicat\Desktop\Basel-Final Project\Backand\CardAPI\CardAPI\obj\Debug\netcoreapp2.1\CardAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Nicat\Desktop\Basel-Final Project\Backand\CardAPI\CardAPI\obj\Debug\netcoreapp2.1\CardAPI.dll
+C:\Users\Nicat\Desktop\Basel-Final Project\Backand\CardAPI\CardAPI\obj\Debug\netcoreapp2.1\CardAPI.pdb
+C:\Users\Nicat\Desktop\Basel-Final Project\Backand\CardAPI\CardAPI\obj\Debug\netcoreapp2.1\CardAPI.csprojAssemblyReference.cache

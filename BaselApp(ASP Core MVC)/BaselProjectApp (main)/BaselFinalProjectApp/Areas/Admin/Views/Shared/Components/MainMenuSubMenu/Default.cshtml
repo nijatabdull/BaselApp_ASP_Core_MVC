@@ -1,0 +1,18 @@
+﻿@using BaselFinalProjectApp.Models.PageModel.HomePageModel
+
+@model List<SubMenuLanguage>
+
+@foreach (SubMenuLanguage item in Model)
+{
+    <tr>
+        <th>@item.Name</th>
+        <td>@item.SubMenu.Controller</td>
+        <td>@item.SubMenu.Action</td>
+        <td>
+            <a asp-action="SubMenuEdit" asp-controller="Home" asp-route-id="@item.SubMenu.Id">Edit</a>
+        </td>
+        <td>
+            <a asp-action="SubMenuDelete" asp-controller="Home" asp-route-id="@item.SubMenu.Id">Delete</a>
+        </td>
+    </tr>
+}

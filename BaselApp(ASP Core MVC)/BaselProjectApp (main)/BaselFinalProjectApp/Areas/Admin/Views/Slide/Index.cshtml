@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BaselFinalProjectApp.Models.PageModel.HomePageModel.SlideLanguage>
+
+<section class="mb-4">
+    <div class="p-3 bg-secondary text-white" style="font-size:1.5rem; text-align:center;">Slide</div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Header</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Footer</th>
+                <th scope="col">Image</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (SlideLanguage item in Model)
+            {
+                <tr>
+                    <th>@item.Header</th>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td>@item.Footer</td>
+                    <td>
+                        <img width="70" height="90" src="~/lib/image/@item.Slide.Image" />
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-controller="Slide" asp-route-id="@item.Slide.Id">Edit</a>
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-controller="Slide" asp-route-id="@item.Slide.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-action="Create" asp-controller="Slide" class="btn btn-secondary btn-lg btn-block">Create</a>
+</section>

@@ -1,0 +1,70 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- Info Section -->
+<article id="info">
+    <h2>Welcome back Nicat!</h2>
+    <span>Get started with the control panel right now</span>
+</article>
+
+
+<!-- Admin -->
+<section id="admin">
+    <div class="text-success">@ViewBag.Message</div>
+    @await Component.InvokeAsync("AdminUser")
+</section>
+
+<!-- ColorDiv Section -->
+<section class="colorDiv row">
+    <div class="col-lg-3 col-md-6 col-12">
+        <div class="color fs">
+            <div class="icon">
+                <i class="fas fa-pencil-alt"></i>
+            </div>
+            <div class="para">
+                <span>428</span>
+                <span>New posts</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12">
+        <div class="color sc">
+            <div class="icon">
+                <i class="fas fa-folder-open"></i>
+            </div>
+            <div class="para">
+                <span>128</span>
+                <span>New comments</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12">
+        <div class="color th">
+            <div class="icon">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+            <div class="para">
+                <span>$ 4,870</span>
+                <span>Earnings</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12">
+        <div class="color fr">
+            <div class="icon">
+                <i class="far fa-user"></i>
+            </div>
+            <div class="para">
+                <span>@Context.Session.GetInt32("UserCount")</span>
+                <span>New clients</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- User -->
+<section id="user">
+    @await Component.InvokeAsync("User")
+</section>
+
+

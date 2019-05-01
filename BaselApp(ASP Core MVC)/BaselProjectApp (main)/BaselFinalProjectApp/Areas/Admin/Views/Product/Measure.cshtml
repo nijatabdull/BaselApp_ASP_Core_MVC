@@ -1,0 +1,37 @@
+﻿@using BaselFinalProjectApp.Models.MainModel
+@model List<Measure>
+
+<section class="mb-4">
+    <div class="p-3 bg-secondary text-white" style="font-size:1.5rem; text-align:center;">Product</div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Size</th>
+                <th scope="col">SKU</th>
+                <th scope="col">Chest</th>
+                <th scope="col">Waist</th>
+                <th scope="col">Hip</th>
+                <th scope="col">Height</th>
+                <th scope="col">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                @foreach (Measure item in Model)
+                {
+                    <tr>
+                        <th>@item.Size</th>
+                        <td>@item.SKU</td>
+                        <td>@item.Chest</td>
+                        <td>@item.Waist</td>
+                        <td>@item.Hip</td>
+                        <td>@item.Height</td>
+                        <td>@item.Age</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <a asp-action="Index" asp-controller="Product" class="btn btn-secondary btn-lg btn-block">Back</a>
+</section>

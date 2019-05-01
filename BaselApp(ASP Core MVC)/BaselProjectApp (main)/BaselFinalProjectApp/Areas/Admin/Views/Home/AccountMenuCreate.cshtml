@@ -1,0 +1,34 @@
+﻿@model BaselFinalProjectApp.Areas.Admin.Models.ViewModel.MenuModel
+
+<section class="p-3">
+    <form asp-action="AccountMenuCreate" asp-controller="Home" method="post" style="width:50%; margin:0px auto;">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="form-group">
+            <label asp-for="EngName"></label>
+            <input asp-for="EngName" type="text" class="form-control">
+            <span asp-validation-for="EngName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AzName"></label>
+            <input asp-for="AzName" type="text" class="form-control">
+            <span asp-validation-for="AzName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="RuName"></label>
+            <input asp-for="RuName" type="text" class="form-control">
+            <span asp-validation-for="RuName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Controller"></label>
+            <input asp-for="Controller" type="text" class="form-control">
+            <span asp-validation-for="Controller" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Action"></label>
+            <input asp-for="Action" type="text" class="form-control">
+            <span asp-validation-for="Action" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn w-100 btn-dark">Create</button>
+        <a asp-controller="Home" asp-action="Menu" class="text-success w-100 btn btn-dark mt-2 mb-3">Back List</a>
+    </form>
+</section>

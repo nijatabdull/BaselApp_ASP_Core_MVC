@@ -1,0 +1,19 @@
+﻿@using BaselFinalProjectApp.Models.PageModel.HomePageModel
+@model List<HeadMenuLanguage>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">@Model.Where(x => x.LanguageId == 1).Select(x => x.Name).SingleOrDefault()</th>
+            <th scope="col">@Model.Select(z => z.HeadMenu.Controller).FirstOrDefault()</th>
+            <th scope="col">@Model.Select(z => z.HeadMenu.Action).FirstOrDefault()</th>
+        </tr>
+    </thead>
+</table>
+<form asp-controller="Home" asp-action="HeadMenuDelete" method="post">
+    <input type="hidden" value="@Model.Select(z => z.HeadMenu.Id).FirstOrDefault()" />
+    <button type="submit" class="btn w-50 btn-dark ml-5 mb-3">Delete</button>
+</form>
+<a asp-controller="Home" asp-action="Menu" class="text-success w-50 btn btn-dark ml-5 mb-3">Back List</a>
+
+

@@ -1,0 +1,80 @@
+﻿@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="mb-4">
+    <div class="p-3 bg-secondary text-white" style="font-size:1.5rem; text-align:center;">Main Menu</div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Controller</th>
+                <th scope="col">Action</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @await Component.InvokeAsync("MainMenu", new { })
+        </tbody>
+    </table>
+    <a asp-action="MenuCreate" asp-controller="Home" class="btn btn-secondary btn-lg btn-block">Create</a>
+</section>
+
+<section class="mt-4">
+    <div class="p-3 bg-secondary text-white" style="font-size:1.5rem; text-align:center;">Main Menu SubMenu</div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Controller</th>
+                <th scope="col">Action</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @await Component.InvokeAsync("MainMenuSubMenu")
+        </tbody>
+    </table>
+    <a asp-action="SubMenuCreate" asp-controller="Home" class="btn btn-secondary btn-lg btn-block">Create</a>
+</section>
+
+<section class="mt-4">
+<div class="p-3 bg-secondary text-white" style="font-size:1.5rem; text-align:center;">Head Menu</div>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Controller</th>
+            <th scope="col">Action</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @await Component.InvokeAsync("AheadMenu")
+    </tbody>
+</table>
+<a asp-controller="Home" asp-action="HeadMenuCreate" class="btn btn-secondary btn-lg btn-block">Create</a>
+</section>
+
+<section class="mt-4 mb-4">
+    <div class="p-3 bg-secondary text-white" style="font-size:1.5rem; text-align:center;">Account Menu</div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Controller</th>
+                <th scope="col">Action</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @await Component.InvokeAsync("AccountMenus")
+        </tbody>
+    </table>
+    <a asp-controller="Home" asp-action="AccountMenuCreate" class="btn btn-secondary btn-lg btn-block">Create</a>
+</section>
