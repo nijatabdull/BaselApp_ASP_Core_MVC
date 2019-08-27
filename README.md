@@ -1,1 +1,1 @@
-# BaselApp_ASP_Core_MVC
+#ASP_Core_MVC
